@@ -49,17 +49,17 @@
             window.location.href = mailtoLink;
         }
 
-        function getEmailBody(relation, name) {
-            // Construct the email body with the email-body class for styling
-            return `
+    function getEmailBody(relation, name) {
+        // Construct the email body with text formatting
+        return `
             <div class="email-body">
-                Dear Admin,
-                <p>My name is ${name}, I am a ${relation} of the University of Notre Dame.</p>
-                <p>I am emailing to express my concern about the drag show...</p>
+                <p style="font-family: 'Georgia', 'Times New Roman', Times, serif; font-weight: bold; font-size: 16px;">Dear Admin,</p>
+                <p style="font-family: 'Georgia', 'Times New Roman', Times, serif;">My name is ${name}, I am a ${relation} of the University of Notre Dame.</p>
+                <p style="font-family: 'Georgia', 'Times New Roman', Times, serif;">I am emailing to express my concern about the drag show...</p>
                 <!-- Add more content here with appropriate styling -->
             </div>
-            `;
-        }
+        `;
+    }
     </script>
 </body>
 </html>
