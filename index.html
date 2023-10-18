@@ -40,7 +40,7 @@
             const email = document.getElementById("email").value;
 
             // Define the email addresses as an array
-            const emailAddresses = ["president@nd.edu", "golinger@nd.edu", "admin3@example.com"];
+            const emailAddresses = ["president@nd.edu", "golinger@nd.edu", "mcgreevy.5@nd.edu"];
 
             // Create the mailto link with multiple recipients
             const mailtoLink = "mailto:" + emailAddresses.join(",") + "?subject=Contact%20from%20School%20Website&body=" + encodeURIComponent(getEmailBody(relation, name));
@@ -57,9 +57,7 @@
         a.title = "states";
         a.href = "https://dulac.nd.edu/university-mission-and-vision/mission/";
         document.body.appendChild(a);
-        return `
-
-Dear Admin,
+        return `Dear Admin,
 
 My name is ${name}, I am a ${relation} of the University of Notre Dame.
 
@@ -78,9 +76,7 @@ The university’s moral obligation to the truth and protection of her students 
 I look forward to your response.
 
 In Christ,
-${name}
-            </div>
-        `;
+${name}`;
     }
     </script>
 </body>
