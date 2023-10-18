@@ -40,7 +40,7 @@
             const email = document.getElementById("email").value;
 
             // Define the email addresses as an array
-            const emailAddresses = ["admin1@example.com", "admin2@example.com", "admin3@example.com"];
+            const emailAddresses = ["president@nd.edu", "golinger@nd.edu", "admin3@example.com"];
 
             // Create the mailto link with multiple recipients
             const mailtoLink = "mailto:" + emailAddresses.join(",") + "?subject=Contact%20from%20School%20Website&body=" + encodeURIComponent(getEmailBody(relation, name));
@@ -53,10 +53,28 @@
         // Construct the email body with text formatting
         return `
             <div class="email-body">
-                <p style="font-family: 'Georgia', 'Times New Roman', Times, serif; font-weight: bold; font-size: 16px;">Dear Admin,</p>
-                <p style="font-family: 'Georgia', 'Times New Roman', Times, serif;">My name is ${name}, I am a ${relation} of the University of Notre Dame.</p>
-                <p style="font-family: 'Georgia', 'Times New Roman', Times, serif;">I am emailing to express my concern about the drag show...</p>
-                <!-- Add more content here with appropriate styling -->
+            Dear Admin,
+            <p>My name is ${name}, I am a ${relation} of the University of Notre Dame.</p>
+I am emailing to express my concern about the drag show that is being held on Notre Dame’s campus on November 3 with sponsorship by the Notre Dame Department of Music, the Department of American Studies, the Initiative on Race and Resilience, the Gender Studies Program, and the Institute for Scholarship in the Liberal Arts. 
+
+
+Notre Dame's mission statement states, “The University is dedicated to the pursuit and sharing of truth for its own sake.” 
+
+
+In February of this year, Father Jenkins offered remarks on Freedom of Expression at the university where he spoke on the university’s commitment to the pursuit of truth and academic freedom and how it relates to freedom of expression. He stated, however, that “the right of free expression does not, of course, extend to speech that threatens violence or constitutes harassment against an individual or a group. Such expressions violate University policies and will not be tolerated.”
+
+
+A drag show absolutely constitutes harassment of women and a perversion of the truth. Drag portrays women as sexualized objects for the sake of entertainment, legitimizing violence against women and an attack on their feminine dignity. Three male ‘artists’ are being paid to parade around in provocative women’s clothing under the guise of ‘self-expression’ and ‘bodily autonomy.’ 
+
+
+Our University lies under the patronage of Our Lady, the Mother of Our Lord. She is the very essence of the spirituality, femininity, and motherhood that women of the faith aspire to–and yet, we refuse to protect such an image of grace and womanhood. To veil such an event under the guise of academic freedom is no better than lying in wait within the garden doors to leer upon Susanna. The Book of Daniel describes how the elders leered upon her body and feminine form. Who is to protect her? Who is to protect the woman and the beauty that is the form God granted her? Who is to protect Our Lady? To refuse to protect the beauty and dignity of the women of this university is to refuse to protect the woman who sits upon our dome. 
+[Did we regild her only to ridicule her?] 
+
+
+The university’s moral obligation to the truth and protection of her students absolutely overrides a notion of ‘academic freedom,’ of which a drag performance has no place.   
+I look forward to your response. 
+In Christ,
+${name}
             </div>
         `;
     }
