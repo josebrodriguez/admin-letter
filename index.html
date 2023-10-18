@@ -2,7 +2,15 @@
 <html>
 <head>
     <title>Contact School Administrator</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        /* Define CSS styles for the email body */
+        .email-body {
+            font-family: 'Georgia', 'Times New Roman', Times, serif;
+            font-size: 16px;
+            line-height: 1.5;
+            color: #333;
+        }
+    </style>
 </head>
 <body>
     <h1>Contact School Administrator</h1>
@@ -18,7 +26,7 @@
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required>
 
-        <label for="email">Email:</label>
+        <label for "email">Email:</label>
         <input type="email" id="email" name="email" required>
 
         <!-- Button to create the mailto link -->
@@ -31,22 +39,26 @@
             const name = document.getElementById("name").value;
             const email = document.getElementById("email").value;
 
-            const emailBody = `Dear Admin,
-My name is ${name}, I am a ${relation} of the University of Notre Dame.
+            // Define the email addresses as an array
+            const emailAddresses = ["admin1@example.com", "admin2@example.com", "admin3@example.com"];
 
-I am emailing to express my concern about the drag show...
-
-...
-
-I look forward to your response.
-Sincerely,
-${name}`;
-
-            // Create the mailto link
-            const mailtoLink = `mailto:admin@example.com?subject=Contact%20from%20School%20Website&body=${encodeURIComponent(emailBody)}`;
+            // Create the mailto link with multiple recipients
+            const mailtoLink = "mailto:" + emailAddresses.join(",") + "?subject=Contact%20from%20School%20Website&body=" + encodeURIComponent(getEmailBody(relation, name));
 
             // Open the default email client with the mailto link
             window.location.href = mailtoLink;
+        }
+
+        function getEmailBody(relation, name) {
+            // Construct the email body with the email-body class for styling
+            return `
+            <div class="email-body">
+                Dear Admin,
+                <p>My name is ${name}, I am a ${relation} of the University of Notre Dame.</p>
+                <p>I am emailing to express my concern about the drag show...</p>
+                <!-- Add more content here with appropriate styling -->
+            </div>
+            `;
         }
     </script>
 </body>
