@@ -2,27 +2,21 @@
 <html>
 <head>
     <title>Speak Out Against Drag At Notre Dame</title>
-    <style>
-        /* Define CSS styles for the email body */
-        .email-body {
-            font-family: 'Georgia', 'Times New Roman', Times, serif;
-            font-size: 16px;
-            line-height: 1.5;
-            color: #333;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
     <h1>Speak Out Against Drag At Notre Dame</h1>
     <form>
+        <div class="nice-form-group">
         <label for="relation">Relation to School:</label>
-        <select id="relation" name="relation">
-            <option value="student">Student</option>
-            <option value="teacher">Teacher</option>
-            <option value="alumni">Alumni</option>
-            <option value="donor">Donor</option>
-            <option value="donor">Supporter</option>
-        </select>
+            <select id="relation" name="relation">
+                <option value="student">Student</option>
+                <option value="teacher">Teacher</option>
+                <option value="alumni">Alumni</option>
+                <option value="donor">Donor</option>
+                <option value="supporter">Supporter</option>
+            </select>
+        </div>
 
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required>
