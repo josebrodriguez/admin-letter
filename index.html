@@ -6,7 +6,7 @@
 </head>
 <body>
     <h1>Contact School Administrator</h1>
-    <form action="process_form.php" method="post">
+    <form id="contactForm">
         <label for="relation">Relation to School:</label>
         <select id="relation" name="relation">
             <option value="student">Student</option>
@@ -21,24 +21,21 @@
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required>
 
-        <!-- Add a hidden input field for the email body -->
-        <input type="hidden" name="email_body" id="email_body">
-        
-        <input type="submit" value="Submit">
+        <input type="button" value="Submit" onclick="sendEmail()">
     </form>
 
-    <script>
-        // JavaScript to autofill the email body
-        document.querySelector("form").addEventListener("submit", function(event) {
-            event.preventDefault(); // Prevent the form from submitting
+    <div id="responseMessage"></div>
 
-            // Get user inputs
+    <script>
+        function sendEmail() {
+            // Retrieve user input
             const relation = document.getElementById("relation").value;
             const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
 
-            // Create the email body with the user inputs
+            // Create the email body
             const emailBody = `Dear Admin,
-My name is ${name}, I am a ${relation} of the University of Notre Dame. 
+            My name is ${name}, I am a ${relation} of the University of Notre Dame.
 
 I am emailing to express my concern about the drag show...
 
@@ -48,12 +45,9 @@ I look forward to your response.
 Sincerely,
 ${name}`;
 
-            // Set the email body in the hidden input field
-            document.getElementById("email_body").value = emailBody;
-
-            // Submit the form
-            this.submit();
-        });
-    </script>
+           // Display the email body or take further actions as needed
+           document.getElementById("responseMessage").innerText = emailBody;
+       }
+   </script>
 </body>
 </html>
