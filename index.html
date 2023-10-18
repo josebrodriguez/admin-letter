@@ -6,7 +6,7 @@
 </head>
 <body>
     <h1>Contact School Administrator</h1>
-    <form id="contactForm">
+    <form>
         <label for="relation">Relation to School:</label>
         <select id="relation" name="relation">
             <option value="student">Student</option>
@@ -21,21 +21,18 @@
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required>
 
-        <input type="button" value="Submit" onclick="sendEmail()">
+        <!-- Button to create the mailto link -->
+        <input type="button" value="Submit" onclick="createMailtoLink()">
     </form>
 
-    <div id="responseMessage"></div>
-
     <script>
-        function sendEmail() {
-            // Retrieve user input
+        function createMailtoLink() {
             const relation = document.getElementById("relation").value;
             const name = document.getElementById("name").value;
             const email = document.getElementById("email").value;
 
-            // Create the email body
             const emailBody = `Dear Admin,
-            My name is ${name}, I am a ${relation} of the University of Notre Dame.
+My name is ${name}, I am a ${relation} of the University of Notre Dame.
 
 I am emailing to express my concern about the drag show...
 
@@ -45,9 +42,12 @@ I look forward to your response.
 Sincerely,
 ${name}`;
 
-           // Display the email body or take further actions as needed
-           document.getElementById("responseMessage").innerText = emailBody;
-       }
-   </script>
+            // Create the mailto link
+            const mailtoLink = `mailto:admin@example.com?subject=Contact%20from%20School%20Website&body=${encodeURIComponent(emailBody)}`;
+
+            // Open the default email client with the mailto link
+            window.location.href = mailtoLink;
+        }
+    </script>
 </body>
 </html>
