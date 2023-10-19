@@ -89,17 +89,18 @@
             // Define the email addresses as an array
             const emailAddresses = ["president@nd.edu", "golinger@nd.edu", "mcgreevy.5@nd.edu, pamela.wojcik.5@nd.edu", "smustill@nd.edu", "bhoeckne@nd.edu", "jason.ruiz@nd.edu", "msander6@nd.edu", "bgreen@nd.edu", "pbutler1@nd.edu"];
             const bccAddress = "nodragnd@gmail.com";
+
+            const emailBody = getEmailBody(relation, name);
+            document.getElementById("to").textContent = emailAddresses.join(", ");
+            document.getElementById("bcc").textContent = bccAddress;
+            document.getElementById("emailBody").textContent = emailBody;
+            document.getElementById("confirmation").style.display = "block";
             
             // Create the mailto link with multiple recipients
             // const mailtoLink = "mailto:" + emailAddresses.join(",") + "?bcc=?subject=Drag%20Show%20At%20Notre%20Dame&body=" + encodeURIComponent(getEmailBody(relation, name));
             const mailtoLink = `mailto:${emailAddresses.join(",")}?bcc=${bccAddress}&subject=Draw%20Show%20At%20Notre%20Dame&body=${encodeURIComponent(getEmailBody(relation, name))}`;
             
             window.open(mailtoLink, '_blank');
-            const emailBody = getEmailBody(relation, name);
-            document.getElementById("to").textContent = emailAddresses.join(", ");
-            document.getElementById("bcc").textContent = bccAddress;
-            document.getElementById("emailBody").textContent = emailBody;
-            document.getElementById("confirmation").style.display = "block";
         }
 
     function getEmailBody(relation, name) {
