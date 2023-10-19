@@ -65,18 +65,12 @@
         <div class="nice-form-group">
             <input type="button" value="Submit" onclick="createMailtoLink()" style="width: 100%;">
         </div>
-
+        
         <div id="confirmation" style="display: none;">
             <p>TO:</p>
             <pre id="to" style="max-width: 100%; white-space: pre-wrap;"></pre>
-        </div>
-
-        <div id="confirmation" style="display: none;">
             <p>BCC:</p>
             <pre id="bcc" style="max-width: 100%; white-space: pre-wrap;"></pre>
-        </div>
-        
-        <div id="confirmation" style="display: none;">
             <p>Email body:</p>
             <pre id="emailBody" style="max-width: 100%; white-space: pre-wrap;"></pre>
         </div>
@@ -102,7 +96,7 @@
             
             window.open(mailtoLink, '_blank');
             const emailBody = getEmailBody(relation, name);
-            document.getElementById("to").textContent = "president@nd.edu";
+            document.getElementById("to").textContent = emailAddresses.join(", ");
             document.getElementById("bcc").textContent = bccAddress;
             document.getElementById("emailBody").textContent = emailBody;
             document.getElementById("confirmation").style.display = "block";
