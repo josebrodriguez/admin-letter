@@ -106,7 +106,7 @@
             
             // Create the mailto link with multiple recipients
             // const mailtoLink = "mailto:" + emailAddresses.join(",") + "?bcc=?subject=Drag%20Show%20At%20Notre%20Dame&body=" + encodeURIComponent(getEmailBody(relation, name));
-            const mailtoLink = `mailto:${emailAddresses.join(",")}?bcc=${bccAddress}&subject=Draw%20Show%20At%20Notre%20Dame&body=${encodeURIComponent(getEmailBody(relation, name))}`;
+            const mailtoLink = `mailto:${emailAddresses.join(",")}?bcc=${bccAddress}&subject=Drag%20Show%20At%20Notre%20Dame&body=${encodeURIComponent(getEmailBody(relation, name))}`;
             
             window.open(mailtoLink, '_blank');
         }
