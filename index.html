@@ -63,7 +63,12 @@
             
         <!-- Button to create the mailto link -->
         <div class="nice-form-group">
-        <input type="button" value="Submit" onclick="createMailtoLink()" style="width: 100%;">
+            <input type="button" value="Submit" onclick="createMailtoLink()" style="width: 100%;">
+        </div>
+        
+        <div id="confirmation" style="display: none;">
+            <p>Email body:</p>
+            <pre id="emailBody"></pre>
         </div>
     </div>
     <footer>This site was built using <a href="https://github.com/nielsVoogt/nice-forms.css">Nice Form CSS</a>. <a href="https://github.com/josebrodriguez/admin-letter">Source Code</a>.</footer>
@@ -86,6 +91,9 @@
             const mailtoLink = `mailto:${emailAddresses.join(",")}?bcc=${bccAddress}&subject=Draw%20Show%20At%20Notre%20Dame&body=${encodeURIComponent(getEmailBody(relation, name))}`;
             
             window.open(mailtoLink, '_blank');
+            const emailBody = getEmailBody(relation, name);
+            document.getElementById("emailBody").textContent = emailBody;
+            document.getElementById("confirmation").style.display = "block";
         }
 
     function getEmailBody(relation, name) {
