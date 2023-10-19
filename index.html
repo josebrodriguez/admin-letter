@@ -63,7 +63,7 @@
             
         <!-- Button to create the mailto link -->
         <div class="nice-form-group">
-        <input type="button" value="Submit" onclick="createMailtoLink()" style="width: 100%;">
+        <a href="#" id="mailtoLink" onclick="createMailtoLink();">Submit</a>
         </div>
     </div>
     <footer>This site was built using <a href="https://github.com/nielsVoogt/nice-forms.css">Nice Form CSS</a>. <a href="https://github.com/josebrodriguez/admin-letter">Source Code</a>.</footer>
@@ -75,17 +75,14 @@
         function createMailtoLink() {
             const relation = document.getElementById("relation").value;
             const name = document.getElementById("name").value;
-            const email = document.getElementById("email").value;
 
-            // Define the email addresses as an array
             const emailAddresses = ["president@nd.edu", "golinger@nd.edu", "mcgreevy.5@nd.edu, pamela.wojcik.5@nd.edu", "smustill@nd.edu", "bhoeckne@nd.edu", "jason.ruiz@nd.edu", "msander6@nd.edu", "bgreen@nd.edu", "pbutler1@nd.edu"];
             const bccAddress = "nodragnd@gmail.com";
-            
-            // Create the mailto link with multiple recipients
-            // const mailtoLink = "mailto:" + emailAddresses.join(",") + "?bcc=?subject=Drag%20Show%20At%20Notre%20Dame&body=" + encodeURIComponent(getEmailBody(relation, name));
-            const mailtoLink = `mailto:${emailAddresses.join(",")}?bcc=${bccAddress}&subject=Draw%20Show%20At%20Notre%20Dame&body=${encodeURIComponent(getEmailBody(relation, name))}`;
-            
-            window.open(mailtoLink, '_blank');
+
+            const mailtoLink = `mailto:${emailAddresses.join(",")}?bcc=${bccAddress}&subject=Contact%20from%20School%20Website&body=${encodeURIComponent(getEmailBody(relation, name))}`;
+
+            // Set the href attribute of the mailto link
+            document.getElementById("mailtoLink").href = mailtoLink;
         }
 
     function getEmailBody(relation, name) {
