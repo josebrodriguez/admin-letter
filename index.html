@@ -84,7 +84,7 @@
             <pre id="emailBody" style="max-width: 100%; white-space: pre-wrap;"></pre>
         </div>
     </div>
-    <footer>This site was built using <a href="https://github.com/nielsVoogt/nice-forms.css">Nice Form CSS</a>. <a href="https://github.com/josebrodriguez/admin-letter">Source Code</a>.</footer>
+    <footer>This site was styled using <a href="https://github.com/nielsVoogt/nice-forms.css">Nice Form CSS</a>. <a href="https://github.com/josebrodriguez/admin-letter">Source Code</a>.</footer>
     </main>
     </section>
     </form>
@@ -107,7 +107,7 @@
             
             // Create the mailto link with multiple recipients
             // const mailtoLink = "mailto:" + emailAddresses.join(",") + "?bcc=?subject=Drag%20Show%20At%20Notre%20Dame&body=" + encodeURIComponent(getEmailBody(relation, name));
-            const mailtoLink = `mailto:${emailAddresses.join(",")}?bcc=${bccAddress}&subject=Concerns%20About%20Show%20At%20DPAC&body=${encodeURIComponent(getEmailBody(relation, name))}`;
+            const mailtoLink = `mailto:${emailAddresses.join(",")}?bcc=${bccAddress}&subject=Letter%20to%20the%20Administration%20and%20Cosponsors&body=${encodeURIComponent(getEmailBody(relation, name))}`;
             
             window.open(mailtoLink, '_blank');
         }
