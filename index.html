@@ -96,7 +96,7 @@
             const email = document.getElementById("email").value;
 
             // Define the email addresses as an array
-            const emailAddresses = ["president@nd.edu", "golinger@nd.edu", "mcgreevy.5@nd.edu", "smustill@nd.edu", "bhoeckne@nd.edu", "jason.ruiz@nd.edu", "msander6@nd.edu", "bgreen@nd.edu", "pbutler1@nd.edu"];
+            const emailAddresses = ["president@nd.edu", "golinger@nd.edu", "mcgreevy.5@nd.edu", "pamela.wojcik.5@nd.edu", "smustill@nd.edu", "bhoeckne@nd.edu", "jason.ruiz@nd.edu", "msander6@nd.edu", "bgreen@nd.edu", "pbutler1@nd.edu"];
             const bccAddress = "stopdragnd@gmail.com";
 
             const emailBody = getEmailBody(relation, name);
@@ -107,7 +107,7 @@
             
             // Create the mailto link with multiple recipients
             // const mailtoLink = "mailto:" + emailAddresses.join(",") + "?bcc=?subject=Drag%20Show%20At%20Notre%20Dame&body=" + encodeURIComponent(getEmailBody(relation, name));
-            const mailtoLink = `mailto:${emailAddresses.join(",")}?bcc=${bccAddress}&subject=Speak%20Against%20Drag%20At%20Notre%20Dame&body=${encodeURIComponent(getEmailBody(relation, name))}`;
+            const mailtoLink = `mailto:${emailAddresses.join(",")}?bcc=${bccAddress}&subject=No%20Drag%20at%20a%20Catholic%20University&body=${encodeURIComponent(getEmailBody(relation, name))}`;
             
             window.open(mailtoLink, '_blank');
         }
