@@ -106,8 +106,8 @@
             document.getElementById("confirmation").style.display = "block";
             
             // Create the mailto link with multiple recipients
-            // const mailtoLink = "mailto:" + emailAddresses.join(",") + "?bcc=?subject=Drag%20Show%20At%20Notre%20Dame&body=" + encodeURIComponent(getEmailBody(relation, name));
-            const mailtoLink = `mailto:${emailAddresses.join(",")}?bcc=${bccAddress}&subject=No%20Drag%20at%20a%20Catholic%20University&body=${encodeURIComponent(getEmailBody(relation, name))}`;
+            // const mailtoLink = "mailto:" + emailAddresses.join(",") + "?bcc=?subject=Our%20Lady%20Weeps%20at%20this%20Show&body=" + encodeURIComponent(getEmailBody(relation, name));
+            const mailtoLink = `mailto:${emailAddresses.join(",")}?bcc=${bccAddress}&subject=Our%20Lady%20Weeps%20at%20this%20Show&body=${encodeURIComponent(getEmailBody(relation, name))}`;
             
             window.open(mailtoLink, '_blank');
         }
