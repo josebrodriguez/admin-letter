@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Speak Out Against Drag At Notre Dame</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+      body {
+        font-family: Georgia, sans-serif;
+        background-color: #f4f4f4;
+      }
+
+      .demo-page-content {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        margin: 0 auto;
+        /* Center the content card horizontally */
+        width: 80%;
+        /* Adjust the width as needed */
+      }
+
+      form {
+        width: 100%;
+        /* You can adjust this to control the form's width */
+      }
+
+      input[type="button"] {
+        background-color: #4CAF50;
+        color: #fff;
+        cursor: pointer;
+        padding: 15px 32px;
+        font-size: 16px;
+        margin: 4px 2px;
+        display: inline-block;
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="demo-page">
+      <main class="demo-page-content">
+        <section>
+          <h1>Speak Out Against Drag At Notre Dame</h1>
+          <p>The Department of Film, Television, and Theatre is co-sponsoring a drag show at Notre Dame alongside the Department of Music, the Department of American Studies, the Initiative on Race and Resilience, the Gender Studies Program, and the Institute for Scholarship in the Liberal Arts. The event is expected to take place in the Philbin Studio Theatre at the Debartolo Performing Arts Center (DPAC) on Friday, November 3rd at 7:30 PM.</p>
+        </section>
+        <!---
+        <section>
+          <h1>Protest Information</h1>
+          <p>If you are in the South Bend area or you are a part of the Notre Dame community and would like to join in protest of this event, we will be gathering outside of DPAC beginning at 6:15 pm on Friday, November 3rd. Tickets are available for students to pick up an hour before the event at 6:30 pm.</p>
+          <p>We strongly encourage those who can to pick up a ticket at the Ticket Office and either enter the blackbox theatre and walk out when the event starts, or not use the ticket (but save a soul from watching the debauchery!)</p>
+          <p>At 7:30 pm, we will begin praying the sorrowful mysteries of the rosary outside of DPAC.</p>
+        </section> --->
+        <section>
+          <h1>Send an Email to University Administration</h1>
+          <!--<img src="drag-poster.png" class="center"> -->
+          <p>If you would like to send an email to Fr. Jenkins, university administrators, and the heads of each sponsoring department, then please fill out the form below.</p>
+          <p>*When you hit submit, a pre-addressed draft email will populate with your name and email address. Feel free to edit as you wish, and thank you for supporting Catholic identity at Our Lady’s University.</p>
+          <p>Disclaimer: This site is not affiliated with the University of Notre Dame or any official Notre Dame student organizations. This site and its initiatives are independently run by current students.</p>
+          <form>
+            <div class="nice-form-group">
+              <label for="relation">Relation to School:</label>
+              <select id="relation" name="relation">
+                <option value="student">Student</option>
+                <option value="professor">Professor</option>
+                <option value="alumnus">Alumni</option>
+                <option value="donor">Donor</option>
+                <option value="supporter">Supporter</option>
+              </select>
+            </div>
+            <div class="nice-form-group">
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="nice-form-group">
+              <label for "email">Email:</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <!-- Button to create the mailto link -->
+            <div class="nice-form-group">
+              <input type="button" value="Submit" onclick="createMailtoLink()" style="width: 100%;">
+            </div>
+            <div id="confirmation" style="display: none;">
+              <p>If your browser blocked the link from opening a new email tab, you can manually copy and paste the template to the following recipients. Feel free to make any edits.</p>
+              <h3>TO:</h3>
+              <pre id="to" style="max-width: 100%; white-space: pre-wrap;">TO: </pre>
+              <p></p>
+              <h3>BCC:</h3>
+              <pre id="bcc" style="max-width: 100%; white-space: pre-wrap;"></pre>
+              <p></p>
+              <h3>Email body:</h3>
+              <pre id="emailBody" style="max-width: 100%; white-space: pre-wrap;"></pre>
+            </div>
+    </div>
+    <footer>This site was styled using <a href="https://github.com/nielsVoogt/nice-forms.css">Nice Form CSS</a>. <a href="https://github.com/josebrodriguez/admin-letter">Source Code</a>. </footer>
+    </main>
+    </section>
+    </form>
+    <script>
+      function createMailtoLink() {
+        const relation = document.getElementById("relation").value;
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        // Define the email addresses as an array
+        const emailAddresses = ["president@nd.edu", "golinger@nd.edu", "mcgreevy.5@nd.edu", "pamela.wojcik.5@nd.edu", "smustill@nd.edu", "bhoeckne@nd.edu", "jason.ruiz@nd.edu", "msander6@nd.edu", "bgreen@nd.edu", "pbutler1@nd.edu"];
+        const bccAddress = "stopdragnd@gmail.com";
+        const emailBody = getEmailBody(relation, name);
+        document.getElementById("to").textContent = emailAddresses.join(", ");
+        document.getElementById("bcc").textContent = bccAddress;
+        document.getElementById("emailBody").textContent = emailBody;
+        document.getElementById("confirmation").style.display = "block";
+        // Create the mailto link with multiple recipients
+        // const mailtoLink = "mailto:" + emailAddresses.join(",") + "?bcc=?subject=Our%20Lady%20Weeps%20at%20this%20Show&body=" + encodeURIComponent(getEmailBody(relation, name));
+        const mailtoLink = `mailto:${emailAddresses.join(",")}?bcc=${bccAddress}&subject=Our%20Lady%20Weeps%20at%20this%20Show&body=${encodeURIComponent(getEmailBody(relation, name))}`;
+        window.open(mailtoLink, '_blank');
+      }
+
+      function getEmailBody(relation, name) {
+        // Construct the email body with text formatting
+        return `Dear Fr. Jenkins, Fr. Gerry, Provost McGreevy, and Administrators,
+
+My name is ${name}, I am a ${relation} of the University of Notre Dame.
+
+I am emailing to express my concern about the drag performance scheduled for November 3 on Notre Dame’s campus with sponsorship by the Notre Dame Department of Film, Television, and Theater, the Department of Music, the Department of American Studies, the Initiative on Race and Resilience, the Gender Studies Program, and the Institute for Scholarship in the Liberal Arts. 
+
+Notre Dame's mission statement declares, “The University is dedicated to the pursuit and sharing of truth for its own sake.” Father Jenkins clarified in his remarks on the university’s commitment to the pursuit of truth and academic freedom that “the right of free expression does not, of course, extend to speech that threatens violence or constitutes harassment against an individual or a group. Such expressions violate University policies and will not be tolerated.”
+
+A drag performance of any kind harasses and degrades women, pervading the truth of God’s creation of man and woman. The University’s invitation to three biological males to be paid to come to campus, dress in provocative clothing, mock, and objectify women must be rescinded. We demand the University offer an apology, especially to her women, for ever considering such a degrading portrayal of femininity, and direct its funds to events that support authentic femininity and the dignity of the human person. 
+
+Our Lady’s University has a moral obligation to the truth and protection of her students that absolutely overrides a notion of ‘academic freedom,’ within which a drag performance has no place. This event must not take place under Our Lady’s golden dome. 
+
+I look forward to your response.
+In Christ,
+${name}`;
+      }
+    </script>
+  </body>
+</html>
